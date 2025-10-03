@@ -1,0 +1,14 @@
+::-webkit-scrollbar {
+    width: 10px;       /* ширина вертикального скролла */
+    height: 10px;      /* высота горизонтального скролла */
+}
+
+::-webkit-scrollbar-track {
+    background: #1c1c1c;  /* фон "дорожки" */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #353535; /* сам ползунок */
+    border-radius: 5px;
+    border: 2px solid #1c1c1c; /* отступ внутри дорожки */
+}
