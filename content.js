@@ -1,7 +1,6 @@
-document.querySelectorAll('*').forEach(el => {
 
-        // МЕНЯЕМ ЦВЕТ БГ ФОНА И КНОПОК
-
+    document.querySelectorAll('*').forEach(el => {
+        // Твой код изменения цветов
         const bg = getComputedStyle(el).backgroundColor;
 
         if (bg === 'rgb(0, 53, 239)') {
@@ -20,8 +19,6 @@ document.querySelectorAll('*').forEach(el => {
             el.style.setProperty('background-color', '#353535', 'important');
         }
 
-        // МЕНЯЕМ ГРАНИЦЫ НА БЕЛЫЙ
-
         const borderColor = getComputedStyle(el).borderBottomColor;
         const borderStyle = getComputedStyle(el).borderBottomStyle;
         const borderWidth = getComputedStyle(el).borderBottomWidth;
@@ -34,165 +31,172 @@ document.querySelectorAll('*').forEach(el => {
             el.style.setProperty('border-bottom', `${borderWidth} solid #3C3C3C`, 'important');
         }
 
-        if (borderColor === 'rgb(228, 228, 228)' && borderStyle !== 'none') {
-            el.style.setProperty('border-bottom', `${borderWidth} solid #3C3C3C`, 'important');
-        }
-
         if (borderColor === 'rgb(247, 247, 247)') {
             el.style.setProperty('border', '1px solid #303030', 'important');
         }
 
-        // МЕНЯЕМ ЦВЕТА ТЕКСТА НА БЕЛЫЙ
-
         const color = getComputedStyle(el).color;
 
-        if (color === 'rgb(51, 51, 51)') {
+        if (color === 'rgb(51, 51, 51)' || color === 'rgb(85, 85, 85)' || color === 'rgb(46, 76, 236)' || color === 'rgb(0, 53, 239)' || color === 'rgb(68, 68, 68)') {
             el.style.setProperty('color', '#fff', 'important');
         }
 
-        if (color === 'rgb(85, 85, 85)') {
-            el.style.setProperty('color', '#fff', 'important');
-        }
-
-        if (color === 'rgb(46, 76, 236)') {
-            el.style.setProperty('color', '#fff', 'important');
-        }
-
-        if (color === 'rgb(0, 53, 239)') {
-            el.style.setProperty('color', '#fff', 'important');
-        }
-
-        if (color === 'rgb(68, 68, 68)') {
-            el.style.setProperty('color', '#fff', 'important');
-        }
-
-        if (color === 'rgb(0, 91, 255)') {
+        if (color === 'rgb(0, 91, 255)' || color === 'rgb(8, 56, 233)') {
             el.style.setProperty('color', '#292929', 'important');
         }
-
     });
 
+    // Стили через <style>
     const s = document.createElement('style');
     s.textContent = `textarea, textarea[readonly] { color: #303030 !important; }`;
     document.head.appendChild(s);
 
+    // Прямые стили на элементы
     document.querySelectorAll('.content-wrapper').forEach(el => {
         el.style.setProperty('background-color', '#3c3c3c', 'important');
     });
 
-    document.querySelector('.customer-login .fields-card').style.boxShadow = 'none';
-    document.querySelector('#wrapper-footer').style.background = '#292929';
+    const loginCard = document.querySelector('.customer-login .fields-card');
+    if (loginCard) {
+        loginCard.style.boxShadow = 'none';
+    }
 
+    const footer = document.querySelector('#wrapper-footer');
+    if (footer) {
+        footer.style.background = '#292929';
+    }
 
-
-const style = document.createElement('style');
+    const style = document.createElement('style');
     style.textContent = `
-  .sidebar-mini .panel-info,
-  .sidebar-mini .panel.panel-default {
-    box-shadow: 2px 11px 12px 0 #3c3c3c !important;
-  }
-  
-  /* При наведении */
-  .sidebar-menu.tree li:hover > a {
-    background-color: #303030 !important;
-    color: #fff !important;
-  }
+    /* Весь твой CSS */
+    .sidebar-mini .panel-info,
+    .sidebar-mini .panel.panel-default {
+      box-shadow: 2px 11px 12px 0 #3c3c3c !important;
+    }
 
-  /* Когда пункт выбран */
-  .sidebar-menu.tree li.active > a,
-  .sidebar-menu.tree li.menu-open > a {
-    background-color: #303030 !important;
-    color: #fff !important;
-  }
-  
+    .sidebar-menu.tree li:hover > a {
+      background-color: #303030 !important;
+      color: #fff !important;
+    }
+
+    .sidebar-menu.tree li.active > a,
+    .sidebar-menu.tree li.menu-open > a {
+      background-color: #303030 !important;
+      color: #fff !important;
+    }
+
     .sidebar-mini .table-bordered td,
-  .sidebar-mini .table-bordered th {
-    border: 1px solid #303030 !important;
-  }
-  
+    .sidebar-mini .table-bordered th {
+      border: 1px solid #303030 !important;
+    }
+
     .sidebar-mini .dataTables_empty,
-  .sidebar-mini .table-bordered > tbody > tr > th,
-  .sidebar-mini .table-bordered > tfoot > tr > th,
-  .sidebar-mini .table-bordered > thead > tr > th,
-  /* чтобы покрыть вложенные элементы (спаны/ссылки) */
-  .sidebar-mini .table-bordered > tbody > tr > th *,
-  .sidebar-mini .table-bordered > tfoot > tr > th *,
-  .sidebar-mini .table-bordered > thead > tr > th * {
-    color: #ffffff !important;
-  }
+    .sidebar-mini .table-bordered > tbody > tr > th,
+    .sidebar-mini .table-bordered > tfoot > tr > th,
+    .sidebar-mini .table-bordered > thead > tr > th,
+    .sidebar-mini .table-bordered > tbody > tr > th *,
+    .sidebar-mini .table-bordered > tfoot > tr > th *,
+    .sidebar-mini .table-bordered > thead > tr > th * {
+      color: #ffffff !important;
+    }
 
-  /* явная подмена для ссылок внутри th (если есть) */
-  .sidebar-mini .table-bordered > tbody > tr > th a,
-  .sidebar-mini .table-bordered > tfoot > tr > th a,
-  .sidebar-mini .table-bordered > thead > tr > th a {
-    color: #ffffff !important;
-  }
-  
-  .sidebar-mini .dataTables_paginate .pagination>li>a {
-    background: #3c3c3c;
-    color: #fff;
-  }
-  
-  .sidebar-mini .btn-default, .sidebar-mini .btn-info, .sidebar-mini .btn-primary, .sidebar-mini .btn.bg-red {
-    background-color: #292929;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 30px;
-    cursor: pointer;
-    outline: 0;
-    font-weight: 400;
-    text-transform: none;
-    border-radius: 4px !important;
-    min-width: 100px;
-  }
+    .sidebar-mini .table-bordered > tbody > tr > th a,
+    .sidebar-mini .table-bordered > tfoot > tr > th a,
+    .sidebar-mini .table-bordered > thead > tr > th a {
+      color: #ffffff !important;
+    }
 
-  table.dataTable thead tr > .dtfc-fixed-left,
-  table.dataTable thead tr > .dtfc-fixed-right,
-  table.dataTable tbody tr > .dtfc-fixed-left,
-  table.dataTable tbody tr > .dtfc-fixed-right {
-    background-color: transparent !important;
-  }
+    .sidebar-mini .dataTables_paginate .pagination>li>a {
+      background: #3c3c3c;
+      color: #fff;
+    }
 
-  .sidebar-mini a {
-    color: #fff;
-  }
+    .sidebar-mini .btn-default, .sidebar-mini .btn-info, .sidebar-mini .btn-primary, .sidebar-mini .btn.bg-red {
+      background-color: #292929;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      padding: 10px 30px;
+      cursor: pointer;
+      outline: 0;
+      font-weight: 400;
+      text-transform: none;
+      border-radius: 4px !important;
+      min-width: 100px;
+    }
 
-  .dataTables_wrapper .dataTables_length select {
-    border: 1px solid #aaa;
-    border-radius: 3px;
-    padding: 5px;
-    background-color: #303030;
-    padding: 4px;
-  }
+    table.dataTable thead tr > .dtfc-fixed-left,
+    table.dataTable thead tr > .dtfc-fixed-right,
+    table.dataTable tbody tr > .dtfc-fixed-left,
+    table.dataTable tbody tr > .dtfc-fixed-right {
+      background-color: transparent !important;
+    }
 
-.k-picker-wrap .k-i-clock:before {
-    content: "\\f017";
-    color: #fff;
-}
+    .sidebar-mini a {
+      color: #fff;
+    }
 
-.k-datetimepicker .k-link {
-    color: #fff !important;
-}
+    .dataTables_wrapper .dataTables_length select {
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      padding: 5px;
+      background-color: #303030;
+    }
 
-.sidebar-mini .form-horizontal .label-wrapper .fa-question-circle:before {
-    content: "\\f29c";
-    color: #e0e0e0 !important;
-}
+    .k-picker-wrap .k-i-clock:before {
+      content: "\\f017";
+      color: #fff;
+    }
 
-.sidebar-mini #average-order-report-grid_wrapper td:nth-child(6), .sidebar-mini #customers-grid_wrapper td:nth-child(6) {
-    color: #fff;
-}
+    .k-datetimepicker .k-link {
+      color: #fff !important;
+    }
 
-.form-control.customer-time-zone option {
-  background-color: #303030;
-  color: #fff; /* чтобы текст был читаемый */
-}
+    .sidebar-mini .form-horizontal .label-wrapper .fa-question-circle:before {
+      content: "\\f29c";
+      color: #e0e0e0 !important;
+    }
 
-  a:hover {
-    color: #353535 !important;
-  }
+    .sidebar-mini #average-order-report-grid_wrapper td:nth-child(6),
+    .sidebar-mini #customers-grid_wrapper td:nth-child(6) {
+      color: #fff;
+    }
 
-`;
+    .form-control.customer-time-zone option {
+      background-color: #303030;
+      color: #fff;
+    }
 
-document.head.appendChild(style);
+    a:hover {
+      color: #353535 !important;
+    }
+    
+    .k-time-popup,
+    .k-popup.k-group.k-reset {
+      background-color: #3c3c3c !important;
+      color: #fff !important;
+    }
+    
+    
+    .k-time-popup .k-item,
+    .k-list .k-item {
+      background-color: #3c3c3c !important;
+      color: #fff !important;
+    }
+    
+    
+    .k-list .k-item:hover,
+    .k-time-popup .k-item:hover {
+      background-color: #505050 !important;
+      color: #fff !important;
+    }
+    
+    
+    .k-list .k-state-selected,
+    .k-time-popup .k-state-selected {
+      background-color: #606060 !important;
+      color: #fff !important;
+    }
+    
+  `;
+    document.head.appendChild(style);
