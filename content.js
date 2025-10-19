@@ -80,7 +80,12 @@ document.querySelectorAll('*').forEach(el => {
         el.style.setProperty('background-color', '#3c3c3c', 'important');
     });
 
-    const style = document.createElement('style');
+    document.querySelector('.customer-login .fields-card').style.boxShadow = 'none';
+    document.querySelector('#wrapper-footer').style.background = '#292929';
+
+
+
+const style = document.createElement('style');
     style.textContent = `
   .sidebar-mini .panel-info,
   .sidebar-mini .panel.panel-default {
