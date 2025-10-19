@@ -198,5 +198,10 @@
       color: #fff !important;
     }
     
+    .k-icon.k-i-arrow-60-up,
+    .k-icon.k-i-arrow-60-down {
+      color: #fff !important;
+    }
+
   `;
     document.head.appendChild(style);
